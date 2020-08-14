@@ -1,0 +1,91 @@
+.section-header {
+  min-height: 15vh;
+  @include flex(row, center, center);
+  position: relative;
+  overflow-x: hidden;
+  z-index: 300;
+
+  &--sticky {
+    position: fixed;
+  }
+}
+
+.section-hero {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.section-features {
+  min-height: 40vh;
+  position: relative;
+  top: -35vh;
+  @include respond(tab-land) {
+    top: -45vh;
+  }
+}
+
+.section-tours {
+  min-height: 100vh;
+}
+
+.tour {
+  @include flex(column, center, center);
+
+  &-heading {
+    min-height: 30vh;
+    top: -10vh;
+    position: relative;
+    @include flex(column, space-evenly, center);
+    max-width: 55rem;
+    text-align: center;
+    @include respond(phone) {
+      padding: 0 2rem;
+    }
+  }
+  &-packages {
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+    max-width: 90%;
+    @include respond(tab-land) {
+      max-width: 100%;
+    }
+    & > *:not(:last-child) {
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section-subscription {
+  min-height: 60vh;
+  margin-top: 10rem;
+}
+
+.section-footer {
+  background: #f8e1db;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  padding: 4rem;
+  // min-height: 60vh;
+  margin-top: 8rem;
+}
+
+body.hide {
+  overflow: hidden;
+}
+
+.client-area {
+  padding: 30px;
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    flex: 1;
+  }
+
+  &__error {
+    color: red;
+  }
+}
